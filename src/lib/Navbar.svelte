@@ -1,0 +1,85 @@
+<script lang="ts">
+  import { onMount } from "svelte"
+
+  type Page = "hero" | "about" | "projects" | "contact"
+  let page: Page = "hero"
+
+  let options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  }
+
+  onMount(() => {
+    // Mount observer to update selected nav item as we scroll
+    let observer = new IntersectionObserver(navFadeIn, options)
+
+    observer.observe(document.querySelector("#hero")!)
+    observer.observe(document.querySelector("#about")!)
+    observer.observe(document.querySelector("#projects")!)
+    observer.observe(document.querySelector("#contact")!)
+  })
+
+  function navFadeIn(entries: IntersectionObserverEntry[], _: IntersectionObserver) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setPage(entry.target.id as Page)
+      }
+    })
+  }
+
+  function setPage(selectedPage: Page) {
+    page = selectedPage
+  }
+</script>
+
+<nav>
+  <ul>
+    <li class:selected={page === "hero"}>
+      <a href="#hero" on:click={() => setPage("hero")}>Home</a>
+    </li>
+    <li class:selected={page === "about"}>
+      <a href="#about" on:click={() => setPage("about")}>About</a>
+    </li>
+    <li class:selected={page === "projects"}>
+      <a href="#projects" on:click={() => setPage("projects")}>Projects</a>
+    </li>
+    <li class:selected={page === "contact"}>
+      <a href="#contact" on:click={() => setPage("contact")}>Contact</a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-right: 12px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  li:hover {
+    color: orange;
+  }
+
+  .selected {
+    color: orange;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+    font-size: 18px;
+  }
+</style>
