@@ -1,12 +1,17 @@
 <script lang="ts">
   import Hero from "./lib/Hero.svelte"
-  import Navbar from "./lib/Navbar.svelte"
+  import Navbar from "./lib/ui/Navbar.svelte"
+  import Section from "./lib/ui/Section.svelte"
+  import SectionBackground from "./lib/ui/SectionBackground.svelte"
 </script>
 
 <main>
   <Hero />
   <Navbar />
-  <section id="about" class="wee">
+
+  <SectionBackground />
+
+  <Section id={"about"} title={"About"}>
     Well, the way they make shows is, they make one show. That show's called a pilot. Then
     they show that show to the people who make shows, and on the strength of that one show
     they decide if they're going to make more shows. Some pilots get picked and become
@@ -30,9 +35,9 @@
     arch-villain's going to be? He's the exact opposite of the hero. And most times
     they're friends, like you and me! I should've known way back when... You know why,
     David? Because of the kids. They called me Mr Glass.
-  </section>
+  </Section>
 
-  <section id="projects" class="wee">
+  <Section id={"projects"} title={"Projects"}>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a sagittis tellus. Nulla
     congue tristique hendrerit. Class aptent taciti sociosqu ad litora torquent per
     conubia nostra, per inceptos himenaeos. Etiam luctus tincidunt elementum. Praesent
@@ -66,21 +71,11 @@
     elementum. Donec est lacus, consectetur non orci vitae, consequat luctus odio. Integer
     vestibulum magna in diam pretium, vitae mollis odio ultricies. Vestibulum feugiat
     nulla nibh, ultricies cursus mauris maximus sed.
-  </section>
+  </Section>
 
-  <section id="contact" class="wee">
+  <Section id="contact" title={"Contact"}>
     <form>
       <input placeholder="ENTER HERE" />
     </form>
-  </section>
+  </Section>
 </main>
-
-<style>
-  .wee {
-    height: 100%;
-  }
-
-  section {
-    padding: 24px 80px;
-  }
-</style>

@@ -59,7 +59,7 @@
     for (var i = 0, x = stars.length; i < x; i++) {
       var s = stars[i]
 
-      ctx.fillStyle = "#fff"
+      ctx.fillStyle = "#F6B17A"
       ctx.beginPath()
       ctx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI)
       ctx.fill()
@@ -129,12 +129,19 @@
 
   <div class="heading">
     <h1><span>Kirat Sidhu </span> | Full Stack Developer</h1>
+
+    <a href="#about" class="button">Nice to meet you!</a>
   </div>
 </section>
 
 <style>
+  section {
+    position: relative;
+    z-index: 999;
+  }
+
   canvas {
-    background: #232323;
+    background: #424769;
     position: absolute;
     height: 100vh;
     width: 100%;
@@ -145,11 +152,58 @@
   }
 
   span {
-    color: orange;
+    color: #f6b17a;
   }
 
   h1 {
-    font-size: 48px;
+    font-size: 4em;
+    font-weight: 400;
+  }
+
+  a {
+    text-decoration: none;
+    color: #f6b17a;
+    font-size: 2em;
+    border: 1px solid #f6b17a;
+    border-radius: 8px;
+    padding: 0.25em 0.5em;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    content: "";
+    transition: transform 0.3s;
+    position: relative;
+    display: inline-block;
+  }
+
+  a::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    content: "";
+    background: #f6b17a;
+    transition: transform 0.3s;
+  }
+
+  a:hover {
+    color: white;
+    transition: transform 0.3s;
+  }
+
+  .button::before {
+    transform-origin: left bottom;
+    transform: scale(1, 0);
+  }
+
+  .button:hover::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
   }
 
   .hero {
@@ -157,10 +211,12 @@
     height: 100vh;
     width: 100%;
   }
+
   .heading {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     z-index: 999;
     margin-left: auto;
     margin-right: auto;

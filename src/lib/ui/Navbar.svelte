@@ -56,18 +56,20 @@
     top: 0;
     right: 0;
     margin-right: 12px;
+    z-index: 999999999999;
   }
 
   li {
     list-style: none;
+    color: #d6e4e5;
   }
 
   li:hover {
-    color: orange;
+    color: #f6b17a;
   }
 
   .selected {
-    color: orange;
+    color: #f6b17a;
   }
 
   ul {
@@ -80,6 +82,6 @@
     text-decoration: none;
     color: inherit;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 1.2rem;
   }
 </style>
