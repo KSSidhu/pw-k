@@ -221,4 +221,12 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  @media only screen and (max-width: 768px) {
+    h1 {
+      font-size: 4em;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
 </style>

@@ -35,4 +35,14 @@
     z-index: 9999;
     position: relative;
   }
+
+  @media only screen and (max-width: 768px) {
+    section {
+      padding: 24px 80px;
+      background: transparent;
+      height: 100%;
+      z-index: 9999;
+      position: relative;
+    }
+  }
 </style>
