@@ -5,7 +5,9 @@
 
 <section {id}>
   <h2>{title}</h2>
-  <slot />
+  <div class="content">
+    <slot />
+  </div>
 </section>
 
 <style>
@@ -34,6 +36,13 @@
     height: 100vh;
     z-index: 9999;
     position: relative;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   @media only screen and (max-width: 768px) {

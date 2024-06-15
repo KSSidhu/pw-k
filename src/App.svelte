@@ -1,5 +1,6 @@
 <script lang="ts">
   import About from "./lib/About.svelte"
+  import Contact from "./lib/Contact.svelte"
   import Hero from "./lib/Hero.svelte"
   import Navbar from "./lib/ui/Navbar.svelte"
   import Section from "./lib/ui/Section.svelte"
@@ -50,9 +51,5 @@
     nulla nibh, ultricies cursus mauris maximus sed.
   </Section>
 
-  <Section id="contact" title={"Contact"}>
-    <form>
-      <input placeholder="ENTER HERE" />
-    </form>
-  </Section>
+  <Contact />
 </main>

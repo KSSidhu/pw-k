@@ -1,7 +1,7 @@
 <div class="skills">
-  <div class="skill-list">
+  <div class="skill-list small-logo">
     <div class="skill-square">
-      <img src="logos/css-3.png" alt="" />
+      <img src="logos/css.png" alt="" />
       <div class="text">CSS</div>
     </div>
 
@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div class="skill-list">
+  <div class="skill-list large-logo">
     <div class="skill-square">
       <img src="logos/react.png" alt="" />
       <div class="text">React</div>
@@ -34,7 +34,7 @@
     </div>
   </div>
 
-  <div class="skill-list">
+  <div class="skill-list large-logo">
     <div class="skill-square">
       <img src="logos/database.png" alt="" />
       <div class="text">Postgres</div>
@@ -53,12 +53,16 @@
 <style>
   img {
     height: 60px;
+    width: auto;
+    border-radius: 8px;
   }
 
   .text {
     text-align: center;
     font-size: 1.4rem;
     font-weight: 600;
+    margin: 0;
+    padding: 0;
   }
 
   .skills {
@@ -81,12 +85,19 @@
     flex-direction: column;
     border: 5px solid #fac277;
     border-radius: 12px;
-    padding: 0.5em 2.25em;
+  }
+
+  .small-logo > div {
+    padding: 0.5em 2em;
+  }
+
+  .large-logo > div {
+    padding: 0.5em 1em;
   }
 
   @media only screen and (max-width: 768px) {
     img {
-      height: 30px;
+      height: 50px;
     }
 
     .skill-square {
@@ -96,7 +107,14 @@
       flex-direction: column;
       border: 5px solid #fac277;
       border-radius: 12px;
-      padding: 1em;
+    }
+
+    .small-logo > div {
+      padding: 0.75em 2.25em;
+    }
+
+    .large-logo > div {
+      padding: 0.75em 1.75em;
     }
 
     .text {
