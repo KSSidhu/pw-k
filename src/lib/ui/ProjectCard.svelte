@@ -11,6 +11,10 @@
   </div>
 
   <img {src} alt="" />
+
+  <div>
+    <p>Hello</p>
+  </div>
 </div>
 
 <style>
@@ -29,8 +33,14 @@
     align-items: center;
   }
 
+  p {
+    font-size: 1.2rem;
+    font-size: 500;
+  }
+
   a {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
     color: #eff5f5;
     text-decoration: none;
     background-color: #f6b17a;
@@ -42,10 +52,8 @@
     align-self: flex-start;
     padding: 6px 12px;
     font-size: 1.5rem;
-    color: #d6e4e5;
-    background-color: #eb6440;
+    color: #eb6440;
     width: fit-content;
-    border-radius: 8px;
   }
 
   img {

@@ -4,20 +4,29 @@
   type Page = "hero" | "about" | "projects" | "contact"
   let page: Page = "hero"
 
-  let options = {
+  const options = {
     root: null,
     rootMargin: "0px",
     threshold: 0.5,
+  }
+
+  const projectsOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2,
   }
 
   onMount(() => {
     // Mount observer to update selected nav item as we scroll
     let observer = new IntersectionObserver(navFadeIn, options)
 
+    let projectsObserver = new IntersectionObserver(navFadeIn, projectsOptions)
+
     observer.observe(document.querySelector("#hero")!)
     observer.observe(document.querySelector("#about")!)
-    observer.observe(document.querySelector("#projects")!)
     observer.observe(document.querySelector("#contact")!)
+
+    projectsObserver.observe(document.querySelector("#projects")!)
   })
 
   function navFadeIn(entries: IntersectionObserverEntry[], _: IntersectionObserver) {

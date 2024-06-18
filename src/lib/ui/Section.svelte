@@ -33,7 +33,6 @@
   section {
     padding: 24px 80px;
     background: transparent;
-    height: 100vh;
     z-index: 9999;
     position: relative;
   }
@@ -43,6 +42,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 60px;
   }
 
   @media only screen and (max-width: 768px) {

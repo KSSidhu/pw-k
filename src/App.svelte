@@ -4,7 +4,6 @@
   import Hero from "./lib/Hero.svelte"
   import Projects from "./lib/Projects.svelte"
   import Navbar from "./lib/ui/Navbar.svelte"
-  import Section from "./lib/ui/Section.svelte"
   import SectionBackground from "./lib/ui/SectionBackground.svelte"
 </script>
 
