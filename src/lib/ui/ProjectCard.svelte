@@ -1,19 +1,35 @@
 <script lang="ts">
   export let name: string
+  export let description: string
   export let src: string
   export let link: string
+  export let variant: "right" | "left"
 </script>
 
-<div class="card">
-  <div class="header">
-    <h3>{name}</h3>
-    <a href={link}>Link</a>
+<div class="card" class:left={variant === "left"} class:right={variant === "right"}>
+  <div
+    class="header"
+    class:header-right={variant === "right"}
+    class:header-left={variant === "left"}
+  >
+    <h3 class="header-text">{name}</h3>
   </div>
 
-  <img {src} alt="" />
+  <div class="content">
+    {#if variant === "right"}
+      <div>
+        <p class="description">{description}</p>
+        <a href={link}>Link</a>
+      </div>
+    {/if}
 
-  <div>
-    <p>Hello</p>
+    <img {src} alt="" />
+    {#if variant === "left"}
+      <div>
+        <p class="description">{description}</p>
+        <a href={link}>Link</a>
+      </div>
+    {/if}
   </div>
 </div>
 
@@ -24,6 +40,19 @@
     border-radius: 16px;
     display: flex;
     flex-direction: column;
+    margin: 0;
+  }
+
+  .left {
+    align-self: flex-start;
+  }
+
+  .right {
+    align-self: flex-end;
+  }
+
+  .description {
+    max-width: 250px;
   }
 
   .header {
@@ -31,6 +60,26 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .header-left {
+    align-self: flex-end;
+    padding-right: 8.5rem;
+  }
+
+  .header-right {
+    align-self: flex-start;
+  }
+
+  .header-text {
+    padding: 0;
+    margin: 0;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
   }
 
   p {
@@ -58,6 +107,7 @@
 
   img {
     height: 500px;
+    width: 800px;
     border-radius: 12px;
   }
 </style>
