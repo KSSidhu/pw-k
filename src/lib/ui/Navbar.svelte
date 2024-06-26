@@ -66,6 +66,10 @@
     right: 0;
     margin-right: 12px;
     z-index: 999999999999;
+
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   li {

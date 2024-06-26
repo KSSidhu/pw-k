@@ -45,10 +45,18 @@
 
   .left {
     align-self: flex-start;
+
+    @media only screen and (max-width: 768px) {
+      align-self: center;
+    }
   }
 
   .right {
     align-self: flex-end;
+
+    @media only screen and (max-width: 768px) {
+      align-self: center;
+    }
   }
 
   .description {
@@ -85,6 +93,10 @@
   p {
     font-size: 1.2rem;
     font-size: 500;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 
   a {
@@ -109,5 +121,10 @@
     height: 500px;
     width: 800px;
     border-radius: 12px;
+
+    @media only screen and (max-width: 768px) {
+      height: 200px;
+      width: 300px;
+    }
   }
 </style>
